@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Welcome to LEAP Lab!"
 date:   2020-08-12 10:59:29 +0530
 categories: jekyll update
 ---
