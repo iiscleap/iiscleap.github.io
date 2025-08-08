@@ -1,11 +1,13 @@
 ---
+layout: default
 title: Home
-layout: page
+nav_order: 1
 ---
 
-# Welcome to LEAP Cluster Documentation
+# Welcome to LEAP Lab Logistics
 
-- [Cluster Usage Guide](usage.md)
-- [Policies & Rules](policies.md)
-- [Examples & Templates](examples.md)
+This site contains documentation on:
+
+- [EEHPC Cluster](#)
+- [Travel Grants](#)
 
