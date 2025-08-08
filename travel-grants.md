@@ -2,7 +2,7 @@
 title: Travel Grants
 has_children: true
 nav_order: 3
-nav_exclude: true
+permalink: /travel-grants/
 ---
 
 # Travel Grants

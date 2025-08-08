@@ -1,16 +1,18 @@
+# Just the Docs theme configuration
 title: LEAP Lab Logistics
-remote_theme: just-the-docs/just-the-docs
+theme: just-the-docs
 
-# Enable sidebar
 just_the_docs:
   show_sidebar: true
   collections:
     eehpc-cluster:
       name: "EEHPC Cluster"
       nav_fold: true
+      output: true
     travel-grants:
       name: "Travel Grants"
       nav_fold: true
+      output: true
 
 # Navigation bar (sidebar)
 nav:
