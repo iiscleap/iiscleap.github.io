@@ -1,6 +1,6 @@
 # Just the Docs theme configuration
 title: LEAP Lab Logistics
-theme: just-the-docs
+remote_theme: just-the-docs/just-the-docs
 
 just_the_docs:
   show_sidebar: true
