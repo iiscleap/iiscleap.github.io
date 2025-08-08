@@ -8,7 +8,7 @@ nav_order: 1
 
 This site contains documentation focused on different logistic components of LEAP Lab. The entire motivation behind putting time and effort behind this is to help a newcomer in LEAP lab to get conversant in the logistical components. Compute cluster guidelines and helpers have been a long due, among them. More user experiences and opinions will likely make this page richer and more comprehensive. Hence, please convey you suggestions to help improve this page.
 
-##Current Responsibilities:
+## Current Responsibilities:
 
 Apart from **Sriram Ganapathy** ([sriramg@iisc.ac.in](mailto:sriramg@iisc.ac.in)), you can reach out to the following people for specific concerns:
 
