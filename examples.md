@@ -1,6 +1,6 @@
 ---
 title: Job Script Examples
-layout: default
+layout: page
 ---
 
 # Job Submission Examples

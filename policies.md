@@ -1,6 +1,6 @@
 ---
 title: Cluster Policies
-layout: default
+layout: page
 ---
 
 # Cluster Usage Policies
