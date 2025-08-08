@@ -1,32 +1,24 @@
 title: LEAP Lab Logistics
 remote_theme: just-the-docs/just-the-docs
-baseurl: ""
 
+# Enable sidebar
 just_the_docs:
   show_sidebar: true
+  collections:
+    eehpc-cluster:
+      name: "EEHPC Cluster"
+      nav_fold: true
+    travel-grants:
+      name: "Travel Grants"
+      nav_fold: true
 
+# Navigation bar (sidebar)
 nav:
   - title: Home
     url: /
 
   - title: EEHPC Cluster
-    children:
-      - title: Cluster Details
-        url: /eehpc-cluster/cluster-details
-      - title: Rules
-        url: /eehpc-cluster/rules
-      - title: Getting Started
-        url: /eehpc-cluster/getting-started
-      - title: FAQs
-        url: /eehpc-cluster/faqs
+    section: eehpc-cluster
 
   - title: Travel Grants
-    children:
-      - title: Grants
-        url: /travel-grants/grants
-      - title: FAQs
-        url: /travel-grants/faqs
-
-plugins:
-  - jekyll-feed
-
+    section: travel-grants

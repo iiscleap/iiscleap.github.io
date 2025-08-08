@@ -2,6 +2,7 @@
 layout: default
 title: Cluster Details
 parent: EEHPC Cluster
+has_children: false
 nav_order: 1
 ---
 

@@ -2,7 +2,8 @@
 layout: default
 title: Frequently Asked Questions (FAQs)
 parent: Travel Grants
-nav_order: 1
+has_children: false
+nav_order: 2
 ---
 
 # Travel Grant Details

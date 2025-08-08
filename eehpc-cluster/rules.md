@@ -2,7 +2,8 @@
 layout: default
 title: Rules
 parent: EEHPC Cluster
-nav_order: 1
+has_children: false
+nav_order: 2
 ---
 
 # EEHPC Cluster Details

@@ -2,7 +2,8 @@
 layout: default
 title: Getting started
 parent: EEHPC Cluster
-nav_order: 1
+has_children: false
+nav_order: 3
 ---
 
 # EEHPC Cluster Details

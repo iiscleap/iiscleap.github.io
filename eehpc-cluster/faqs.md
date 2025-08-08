@@ -2,7 +2,8 @@
 layout: default
 title: Frequently Asked Questions (FAQs)
 parent: EEHPC Cluster
-nav_order: 1
+has_children: false
+nav_order: 4
 ---
 
 # EEHPC Cluster Details
