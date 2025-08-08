@@ -24,3 +24,8 @@ nav:
 
   - title: Travel Grants
     section: travel-grants
+
+collections:
+  pages:
+    output: true
+    permalink: /:path/
