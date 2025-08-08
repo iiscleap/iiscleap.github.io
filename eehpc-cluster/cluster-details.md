@@ -64,6 +64,7 @@ The EEHPC Cluster is hosted by LEAP Lab in the Electrical Engineering building, 
 
 - For **GPU jobs**, a pre-configured environment named `pytorch2` is available.  
   Use the following command:
+
   ```bash
   conda activate pytorch2
 
