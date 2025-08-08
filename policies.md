@@ -1,4 +1,7 @@
 ---
+title: Cluster Policies
+layout: default
+---
 
 # Cluster Usage Policies
 
