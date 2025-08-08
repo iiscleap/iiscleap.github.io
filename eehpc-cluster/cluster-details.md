@@ -67,6 +67,7 @@ The EEHPC Cluster is hosted by LEAP Lab in the Electrical Engineering building, 
 
   ```bash
   conda activate pytorch2
+  ```
 
 # Shared Storage Spaces
 
