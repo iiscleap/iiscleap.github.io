@@ -1,4 +1,3 @@
-yout: default
 ---
 
 # Job Submission Examples

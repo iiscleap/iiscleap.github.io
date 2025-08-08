@@ -1,4 +1,3 @@
-yout: default
 ---
 
 # Cluster Usage Policies
