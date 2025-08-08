@@ -6,7 +6,7 @@ has_children: false
 nav_order: 2
 ---
 
-# EEHPC Cluster Details
+# EEHPC Cluster Rules
 
-(Your content here)
+1.
 
