@@ -7,6 +7,8 @@ nav_order: 1
 ---
 
 # EEHPC Cluster Details
+The EEHPC Cluster is hosted by LEAP Lab in the Electrical Engineering building, Indian Institute of Science (IISc). 
+![EEHPC Cluster Layout](../images/eehpc_layout.png)
 
 # GPU Resource Availability
 
