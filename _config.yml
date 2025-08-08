@@ -1,35 +1,32 @@
 title: LEAP Lab Logistics
 remote_theme: just-the-docs/just-the-docs
-
 baseurl: ""
 
 just_the_docs:
-  logo: ""
   show_sidebar: true
-  nav_sort: case_sensitive
 
-# Sidebar Navigation
-# nav:
-#   - title: Home
-#       url: /
-#
-#         - title: EEHPC Cluster
-#             url: /
-#                 children:
-#                       - title: Cluster Details
-#                               url: /eehpc-cluster/cluster-details
-#                                     - title: Rules
-#                                             url: /eehpc-cluster/rules
-#                                                   - title: Getting Started
-#                                                           url: /eehpc-cluster/getting-started
-#                                                                 - title: FAQs
-#                                                                         url: /eehpc-cluster/faqs
-#
-#                                                                           - title: Travel Grants
-#                                                                               url: /
-#                                                                                   children:
-#                                                                                         - title: Grants
-#                                                                                                 url: /travel-grants/grants
-#                                                                                                       - title: FAQs
-#                                                                                                               url: /travel-grants/faqs
-#
+nav:
+  - title: Home
+    url: /
+
+  - title: EEHPC Cluster
+    children:
+      - title: Cluster Details
+        url: /eehpc-cluster/cluster-details
+      - title: Rules
+        url: /eehpc-cluster/rules
+      - title: Getting Started
+        url: /eehpc-cluster/getting-started
+      - title: FAQs
+        url: /eehpc-cluster/faqs
+
+  - title: Travel Grants
+    children:
+      - title: Grants
+        url: /travel-grants/grants
+      - title: FAQs
+        url: /travel-grants/faqs
+
+plugins:
+  - jekyll-feed
+
