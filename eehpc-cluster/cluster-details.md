@@ -67,6 +67,36 @@ The EEHPC Cluster is hosted by LEAP Lab in the Electrical Engineering building, 
   ```bash
   conda activate pytorch2
 
+# Shared Storage Spaces
+
+To avoid redundancy and ensure efficient use of disk space, the following **shared directories** have been set up for common use across users:
+
+1. **Datasets Directory**  
+   Store all datasets in the shared location:  
+   `/home/leapers/data`
+
+2. **Feature Storage**  
+   Extracted features should be stored in:  
+   `/home/leapers/features`
+
+3. **HuggingFace Cache**  
+   HuggingFace model weights are now automatically stored in:  
+   `/home/leapers`  
+   > You do not need to change any settings — this is handled automatically.
+
+4. **Model Weights**  
+   Your own trained model weights should be saved in:  
+   `/home/leapers/weights`
+
+---
+
+With the above shared spaces in place, your **personal `/home/username/` directory** should be reserved only for:
+- Code
+- Logs
+- A few intermediate results
+
+Please avoid storing large datasets or model weights in your home directory.
+
 ---
 
 > **Warning**
