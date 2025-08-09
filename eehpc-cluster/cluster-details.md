@@ -77,18 +77,52 @@ To avoid redundancy and ensure efficient use of disk space, the following **shar
    Store all datasets in the shared location:  
    `/home/leapers/data`
 
+**Permissions:**
+1. Any user can write into it.
+2. No user can delete it.
+3. If `user1` creates a directory `dataset1` inside the path, any other user (`user2`) can read it, but cannot write/delete `dataset1` unless permission is explicitly given by `user1`.
+
+**Usage:**
+- As a user (`user1`), create a directory, e.g. `/home/leapers/data/ESC_dataset`, and keep the ESC dataset inside it.  
+- **Do not** create `/home/leapers/data/user1/ESC_dataset`, as other users cannot see it easily and may end up downloading the ESC dataset again.
+
+---
+
 2. **Feature Storage**  
    Extracted features should be stored in:  
    `/home/leapers/features`
+
+**Permissions:**
+1. Any user can write inside it.
+2. No user can delete the folder.
+3. If `user1` creates a directory inside the path, any other user (`user2`) can read it, but cannot modify/delete that directory unless permission is explicitly given by `user1`.
+
+**Usage:**
+- As a user (`user1`), create a directory called `/home/leapers/features/user1`.
+- Put your features inside a specific feature-named directory, e.g.  
+  `/home/leapers/features/user1/librosa_features_ESC/<features>.npy`
+
+---
 
 3. **HuggingFace Cache**  
    HuggingFace model weights are now automatically stored in:  
    `/home/leapers`  
    > You do not need to change any settings — this is handled automatically.
 
+---
+
 4. **Model Weights**  
    Your own trained model weights should be saved in:  
    `/home/leapers/weights`
+**Permissions:**
+1. Any user can write inside it.
+2. No user can delete the folder.
+3. If `user1` creates a directory inside the path, any other user (`user2`) can read it, but cannot modify/delete that directory unless permission is explicitly given by `user1`.
+
+**Usage:**
+- As a user (`user1`), create a directory called `/home/leapers/weights/user1`.
+- Put your trained/finetuned/other model weights inside a specific weight-name directory, e.g.  
+  `/home/leapers/weights/user1/finetune_ResNet_CIFAR10/resnet_ft.pt`
 
 ---
 
