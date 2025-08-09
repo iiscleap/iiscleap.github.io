@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Getting started
+title: Create an Account
 parent: EEHPC Cluster
 has_children: false
-nav_order: 4
+nav_order: 1
 ---
 
-# EEHPC Cluster Details
+# Create an EEHPC Account
 
 (Your content here)
 
