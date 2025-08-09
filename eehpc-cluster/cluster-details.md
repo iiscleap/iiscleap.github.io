@@ -77,14 +77,14 @@ To avoid redundancy and ensure efficient use of disk space, the following **shar
    Store all datasets in the shared location:  
    `/home/leapers/data`
 
-**Permissions:**
-1. Any user can write into it.
-2. No user can delete it.
-3. If `user1` creates a directory `dataset1` inside the path, any other user (`user2`) can read it, but cannot write/delete `dataset1` unless permission is explicitly given by `user1`.
+   **Permissions:**
+   - Any user can write into it.
+   - No user can delete it.
+   - If `user1` creates a directory `dataset1` inside the path, any other user (`user2`) can read it, but cannot write/delete `dataset1` unless permission is explicitly given by `user1`.
 
-**Usage:**
-- As a user (`user1`), create a directory, e.g. `/home/leapers/data/ESC_dataset`, and keep the ESC dataset inside it.  
-- **Do not** create `/home/leapers/data/user1/ESC_dataset`, as other users cannot see it easily and may end up downloading the ESC dataset again.
+   **Usage:**
+   - As a user (`user1`), create a directory, e.g. `/home/leapers/data/ESC_dataset`, and keep the ESC dataset inside it.  
+   - **Do not** create `/home/leapers/data/user1/ESC_dataset`, as other users cannot see it easily and may end up downloading the ESC dataset again.
 
 ---
 
@@ -92,14 +92,14 @@ To avoid redundancy and ensure efficient use of disk space, the following **shar
    Extracted features should be stored in:  
    `/home/leapers/features`
 
-**Permissions:**
-1. Any user can write inside it.
-2. No user can delete the folder.
-3. If `user1` creates a directory inside the path, any other user (`user2`) can read it, but cannot modify/delete that directory unless permission is explicitly given by `user1`.
+   **Permissions:**
+   - Any user can write inside it.
+   - No user can delete the folder.
+   - If `user1` creates a directory inside the path, any other user (`user2`) can read it, but cannot modify/delete that directory unless permission is explicitly given by `user1`.
 
-**Usage:**
-- As a user (`user1`), create a directory called `/home/leapers/features/user1`.
-- Put your features inside a specific feature-named directory, e.g.  
+   **Usage:**
+   - As a user (`user1`), create a directory called `/home/leapers/features/user1`.
+   - Put your features inside a specific feature-named directory, e.g.  
   `/home/leapers/features/user1/librosa_features_ESC/<features>.npy`
 
 ---
@@ -114,6 +114,7 @@ To avoid redundancy and ensure efficient use of disk space, the following **shar
 4. **Model Weights**  
    Your own trained model weights should be saved in:  
    `/home/leapers/weights`
+   
    **Permissions:**
    - Any user can write inside it.
    - No user can delete the folder.
