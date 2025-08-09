@@ -42,3 +42,19 @@ Apart from **Sriram Ganapathy** ([sriramg@iisc.ac.in](mailto:sriramg@iisc.ac.in)
 
 3. **Administrative Matters**  
    _Contact:_ Pratibha ([pratibha.rn@fsid-iisc.in](mailto:pratibha.rn@fsid-iisc.in))
+
+<style>
+  .side-bar { padding-bottom: 100px; }
+  .sidebar-logos-inline {
+    position: fixed; left: 0; bottom: 0; width: 260px; /* adjust width if your sidebar differs */
+    text-align: center; padding: 12px 16px; background: transparent;
+  }
+  .sidebar-logos-inline img { max-width: 120px; height: auto; display: block; margin: 8px auto 0; }
+  @media (max-width: 800px) { .sidebar-logos-inline { display: none; } } /* hide on mobile */
+</style>
+
+<div class="sidebar-logos-inline">
+  <img src="/images/leap_logo.jpeg" alt="Logo 1">
+  <img src="/images/iisc_logo.jpg" alt="Logo 2">
+</div>
+
