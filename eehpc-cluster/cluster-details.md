@@ -114,14 +114,14 @@ To avoid redundancy and ensure efficient use of disk space, the following **shar
 4. **Model Weights**  
    Your own trained model weights should be saved in:  
    `/home/leapers/weights`
-**Permissions:**
-1. Any user can write inside it.
-2. No user can delete the folder.
-3. If `user1` creates a directory inside the path, any other user (`user2`) can read it, but cannot modify/delete that directory unless permission is explicitly given by `user1`.
+   **Permissions:**
+   - Any user can write inside it.
+   - No user can delete the folder.
+   - If `user1` creates a directory inside the path, any other user (`user2`) can read it, but cannot modify/delete that directory unless permission is explicitly given by `user1`.
 
-**Usage:**
-- As a user (`user1`), create a directory called `/home/leapers/weights/user1`.
-- Put your trained/finetuned/other model weights inside a specific weight-name directory, e.g.  
+   **Usage:**
+   - As a user (`user1`), create a directory called `/home/leapers/weights/user1`.
+   - Put your trained/finetuned/other model weights inside a specific weight-name directory, e.g.  
   `/home/leapers/weights/user1/finetune_ResNet_CIFAR10/resnet_ft.pt`
 
 ---
