@@ -86,8 +86,6 @@ To avoid redundancy and ensure efficient use of disk space, the following **shar
    - As a user (`user1`), create a directory, e.g. `/home/leapers/data/ESC_dataset`, and keep the ESC dataset inside it.  
    - **Do not** create `/home/leapers/data/user1/ESC_dataset`, as other users cannot see it easily and may end up downloading the ESC dataset again.
 
----
-
 2. **Feature Storage**  
    Extracted features should be stored in:  
    `/home/leapers/features`
@@ -102,14 +100,10 @@ To avoid redundancy and ensure efficient use of disk space, the following **shar
    - Put your features inside a specific feature-named directory, e.g.  
   `/home/leapers/features/user1/librosa_features_ESC/<features>.npy`
 
----
-
 3. **HuggingFace Cache**  
    HuggingFace model weights are now automatically stored in:  
    `/home/leapers`  
    > You do not need to change any settings — this is handled automatically.
-
----
 
 4. **Model Weights**  
    Your own trained model weights should be saved in:  
