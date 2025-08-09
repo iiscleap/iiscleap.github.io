@@ -62,12 +62,22 @@ The EEHPC Cluster is hosted by LEAP Lab in the Electrical Engineering building, 
 - A **common base conda environment** should automatically be visible when you log in.  
   If you don’t see `'base'` next to your username after login, please contact the admin.
 
-- For **GPU jobs**, a pre-configured environment named `pytorch2` is available.  
-  Use the following command:
+- For **GPU jobs**, two pre-configured environments named `pytorch2` and `python310` are available.  
+  For example, use the following command to activate `pytorch2`:
 
   ```bash
   conda activate pytorch2
   ```
+- ## Pre-installed packages:
+    ## 1. `base`
+    - **Python:** 3.13.5
+    - `matplotlib` — 3.10.0
+    - `numpy` — 2.1.3
+    - `pandas` — 2.2.3
+    - `scikit-image` — 0.25.0
+    - `scikit-learn` — 1.6.1
+    - `scipy` — 1.15.3
+ 
 
 # Shared Storage Spaces
 
