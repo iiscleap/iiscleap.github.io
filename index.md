@@ -43,5 +43,5 @@ Apart from **Sriram Ganapathy** ([sriramg@iisc.ac.in](mailto:sriramg@iisc.ac.in)
 3. **Administrative Matters**  
    _Contact:_ Pratibha ([pratibha.rn@fsid-iisc.in](mailto:pratibha.rn@fsid-iisc.in))
 
-![Logo 1](/assets/images/leap_logo.jpeg){: style="height:60px; margin-right:20px;"}  
-![Logo 2](/assets/images/iisc_logo.jpg){: style="height:60px;"}
+![Logo 1](images/leap_logo.jpeg){: style="height:60px; margin-right:20px;"}  
+![Logo 2](images/iisc_logo.jpg){: style="height:60px;"}
