@@ -8,7 +8,29 @@ nav_order: 1
 
 This site contains documentation focused on different logistic components of LEAP Lab. The entire motivation behind putting time and effort behind this is to help a newcomer in LEAP lab to get conversant in the logistical components. Compute cluster guidelines and helpers have been a long due, among them. More user experiences and opinions will likely make this page richer and more comprehensive. Hence, please convey you suggestions to help improve this page.
 
-## Current Responsibilities:
+## 🚀 After You Joinn
+
+Welcome to the LEAP Lab! 🎉  
+Once you become a part of our community, make sure you get connected and stay updated through the following channels:
+
+### 💬 Leapers WhatsApp Group  
+Stay in touch instantly with fellow lab members. Great for quick updates, and discussions.
+
+### 📧 Leapers Mail Group  
+Get official announcements, important lab notices delivered directly to your inbox.
+
+### 🌐 Lab Webpage  
+Explore our projects, publications, lab members, and updates on the official LEAP Lab website:  
+[http://leap.ee.iisc.ac.in/](http://leap.ee.iisc.ac.in/)
+
+### 💻 LEAP Lab Teams Page  
+Collaborate on documents, share meeting notes, and join online lab discussions through Microsoft Teams.
+
+### 🗂️ (NEW) All Logistics Webpage  
+A one-stop resource for all kinds of losgistical help — cluster usage, applying for fellowships, travel grants and so on:  
+[https://iiscleap.github.io/](https://iiscleap.github.io/)
+
+## Whom to Approach:
 
 Apart from **Sriram Ganapathy** ([sriramg@iisc.ac.in](mailto:sriramg@iisc.ac.in)), you can reach out to the following people for specific concerns:
 
