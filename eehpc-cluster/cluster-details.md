@@ -111,6 +111,16 @@ The EEHPC Cluster is hosted by LEAP Lab in the Electrical Engineering building, 
     - `torchmetrics` — 1.8.1
     - `torchvision` — 0.21.0+cu124
 
+- ## Adding more packages
+  if you need any extra package on top of the existing packages in one of these 3 preinstalled environments(assume `pytorch2`), then you can simply do:
+```bash
+conda activate pytorch2
+pip3 install <package_name>
+```
+Doing so installs the package in pip3 path of the `pytorch2` environment, inside thats specific user home path of `/home/<user>/`. Hence, the pachage will work only from that user account.
+- ## Need environment with different `python`, `torch` versions
+  If you need an environment because of specific `python` or `torch` version requirements, then create a new conda environment itself (refer: [Conda Environment Management Guide](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)). Note that, this new environemnet will only be accessible by that specific user, unless explicitly shared to another user.
+
 # Shared Storage Spaces
 
 To avoid redundancy and ensure efficient use of disk space, the following **shared directories** have been set up for common use across users:
