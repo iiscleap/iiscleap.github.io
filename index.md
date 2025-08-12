@@ -30,6 +30,14 @@ Collaborate on documents, share meeting notes, and join online lab discussions t
 A one-stop resource for all kinds of losgistical help — cluster usage, applying for fellowships, travel grants and so on:  
 [https://iiscleap.github.io/](https://iiscleap.github.io/)
 
+## Lab Subscription(s):
+
+We have subscriptions for the below. Reach out if you need to use them.
+
+1. **ChatGPT Plus**
+
+2. **GCP Credits**
+
 ## Whom to Approach:
 
 Apart from **Sriram Ganapathy** ([sriramg@iisc.ac.in](mailto:sriramg@iisc.ac.in)), you can reach out to the following people for specific concerns:
