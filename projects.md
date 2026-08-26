@@ -10,4 +10,4 @@ permalink: /projects/
 
 This page contains project pages of different lab works.
 
-- [BiG-SURE](/projects/big-sure/)
+- [BiG-SURE](/projects/BiG-SURE/)

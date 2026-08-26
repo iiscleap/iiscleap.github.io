@@ -3,7 +3,7 @@ layout: default
 title: BiG-SURE
 parent: Projects
 nav_order: 1
-permalink: /projects/big-sure/
+permalink: /projects/BiG-SURE/
 ---
 
 # BiG-SURE
