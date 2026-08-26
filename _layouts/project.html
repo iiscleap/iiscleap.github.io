@@ -1,0 +1,52 @@
+---
+layout: default
+---
+
+<style>
+  /* Reusable project-page layout. It affects only pages using layout: project. */
+  .main-content-wrap,
+  .main-content {
+    max-width: none;
+  }
+
+  .main-content {
+    padding: 0;
+  }
+
+  .project-page-frame {
+    display: block;
+    width: 100%;
+    height: calc(100vh - 3.75rem);
+    min-height: 760px;
+    border: 0;
+  }
+
+  @media (min-width: 50rem) {
+    .side-bar {
+      width: 12rem;
+      min-width: 12rem;
+    }
+
+    .main {
+      max-width: none;
+      margin-left: 12rem;
+    }
+
+    .main-header {
+      left: 12rem;
+    }
+
+    .site-header,
+    .site-nav {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+  }
+</style>
+
+<iframe
+  class="project-page-frame"
+  src="{{ page.project_path | relative_url }}"
+  title="{{ page.title }} project page"
+  loading="eager"
+></iframe>

@@ -1,11 +1,8 @@
 ---
-layout: default
+layout: project
 title: BiG-SURE
 parent: Projects
 nav_order: 1
 permalink: /projects/BiG-SURE/
+project_path: /project-pages/BiG-SURE/
 ---
-
-# BiG-SURE
-
-This page contains details for the BiG-SURE project.

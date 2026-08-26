@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BiG-SURE estimates uncertainty in black-box language models through cross-temperature bipartite semantic agreement.">
+  <meta name="theme-color" content="#f4f1e8">
+  <title>BiG-SURE — Uncertainty from cross-temperature agreement</title>
+  <link rel="stylesheet" href="styles.css?v=20260826-1">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="BiG-SURE home">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span>BiG—SURE</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#demo">Demo</a>
+      <a href="#results">Results</a>
+      <a href="#citation">Citation</a>
+    </nav>
+    <a class="header-paper" href="#citation">Paper soon <span aria-hidden="true">↓</span></a>
+  </header>
+
+  <main id="top">
+    <section class="hero shell">
+      <div class="hero-copy">
+        <div class="eyebrow"><span></span> EMNLP 2026 · Main Conference</div>
+        <h1>Does an LLM’s answer<br><em>survive a temperature change?</em></h1>
+        <p class="dek"><strong>BiG-SURE</strong> estimates uncertainty without model internals. It simply asks whether a model’s low-temperature answers and high-temperature answers still mean the same thing.</p>
+        <div class="hero-actions">
+          <a class="button button-dark" href="#demo">See it in action <span aria-hidden="true">↓</span></a>
+          <a class="button button-light" href="#citation">Paper coming soon <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-label="Cross-temperature agreement illustration">
+        <div class="temperature-label cool">LOW T <b>0.1</b></div>
+        <div class="temperature-label hot">HIGH T <b>1.0</b></div>
+        <svg viewBox="0 0 600 430" role="img" aria-label="Three anchors strongly connected to six probes">
+          <defs>
+            <linearGradient id="flow" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#3947a8"/>
+              <stop offset="1" stop-color="#f16442"/>
+            </linearGradient>
+          </defs>
+          <g class="hero-links">
+            <path d="M146 104 C300 104 316 78 452 72"/><path d="M146 104 C300 104 316 152 452 147"/>
+            <path d="M146 104 C300 104 316 220 452 222"/><path d="M146 215 C300 215 316 78 452 72"/>
+            <path d="M146 215 C300 215 316 152 452 147"/><path d="M146 215 C300 215 316 220 452 222"/>
+            <path d="M146 326 C300 326 316 220 452 222"/><path d="M146 326 C300 326 316 295 452 297"/>
+            <path d="M146 326 C300 326 316 370 452 372"/>
+          </g>
+          <g class="hero-nodes anchors"><circle cx="135" cy="104" r="22"/><circle cx="135" cy="215" r="22"/><circle cx="135" cy="326" r="22"/></g>
+          <g class="hero-nodes probes"><circle cx="466" cy="72" r="17"/><circle cx="466" cy="147" r="17"/><circle cx="466" cy="222" r="17"/><circle cx="466" cy="297" r="17"/><circle cx="466" cy="372" r="17"/></g>
+        </svg>
+        <div class="visual-caption"><span class="signal-dot"></span><strong>Strong agreement implies high confidence.</strong></div>
+      </div>
+    </section>
+
+    <section class="demo-section" id="demo">
+      <div class="shell">
+        <div class="section-heading demo-heading">
+          <div><span class="kicker">Interactive walkthrough</span><h2>Watch uncertainty emerge.</h2></div>
+          <p>Two saved examples. One remains certain across temperatures; the other becomes uncertain. Follow the signal from prompt to score.</p>
+        </div>
+
+        <div class="demo-card" data-state="reliable">
+          <div class="demo-toolbar">
+            <div class="example-picker">
+              <span class="tab-caption">Choose example</span>
+              <div class="example-tabs" role="group" aria-label="Choose a saved example">
+                <button class="example-tab active" data-example="reliable" aria-pressed="true"><span></span> Reliable answer</button>
+                <button class="example-tab" data-example="uncertain" aria-pressed="false"><span></span> Uncertain answer</button>
+              </div>
+            </div>
+            <button class="replay" type="button" aria-label="Replay animation"><span aria-hidden="true">↻</span> Replay</button>
+          </div>
+
+          <div class="stepper" aria-label="Demo progress">
+            <button class="step active" data-step="0"><b>01</b><span>Ask</span></button>
+            <button class="step" data-step="1"><b>02</b><span>Sample</span></button>
+            <button class="step" data-step="2"><b>03</b><span>Connect</span></button>
+            <button class="step" data-step="3"><b>04</b><span>Score</span></button>
+          </div>
+
+          <div class="demo-stage" aria-live="polite">
+            <article class="prompt-pane reveal-part part-0">
+              <div class="pane-label"><span>01</span> Query</div>
+              <p id="demo-query">What planet is known as the Red Planet?</p>
+              <div class="greedy-answer"><span>Greedy answer</span><strong id="demo-greedy">Mars</strong></div>
+            </article>
+
+            <article class="samples-pane reveal-part part-1">
+              <div class="sample-column">
+                <div class="pane-label cool-label"><span>02a</span> Anchors <small>T = 0.1</small></div>
+                <div class="response-list" id="anchors-list"></div>
+              </div>
+              <div class="sample-column probes-column">
+                <div class="pane-label hot-label"><span>02b</span> Probes <small>T = 1.0</small></div>
+                <div class="response-list" id="probes-list"></div>
+              </div>
+            </article>
+
+            <article class="graph-pane reveal-part part-2">
+              <div class="pane-label"><span>03</span> Semantic agreement</div>
+              <div class="graph-wrap">
+                <svg id="demo-graph" viewBox="0 0 680 290" role="img" aria-label="Bipartite agreement graph"></svg>
+                <div class="graph-legend">
+                  <span class="node-key"><i class="legend-node anchor-key"></i> low-T anchor</span>
+                  <span class="node-key"><i class="legend-node probe-key"></i> high-T probe</span>
+                  <span class="agreement-key"><i class="legend-edge low-edge"></i> light dots · low agreement</span>
+                  <span class="agreement-key"><i class="legend-edge high-edge"></i> dark dots · high agreement</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="score-pane reveal-part part-3">
+              <div class="score-copy">
+                <div class="pane-label"><span>04</span> Spectral energy</div>
+                <p>Square every connection, then take the mean. Its complement is uncertainty.</p>
+                <div class="formula">U<sub>norm</sub> = 1 − <span class="fraction"><span>Σ W<sub>ij</sub><sup>2</sup></span><span>MN</span></span></div>
+                <dl class="formula-legend">
+                  <div><dt>U<sub>norm</sub></dt><dd>normalized uncertainty</dd></div>
+                  <div><dt>Σ</dt><dd>sum over every anchor–probe pair</dd></div>
+                  <div><dt>W<sub>ij</sub></dt><dd>semantic agreement between anchor i and probe j</dd></div>
+                  <div><dt>M</dt><dd>low-temperature anchors</dd></div>
+                  <div><dt>N</dt><dd>high-temperature probes</dd></div>
+                </dl>
+              </div>
+              <div class="score-dial-wrap">
+                <div class="score-dial" id="score-dial"><div><span id="score-value">0.00</span><small>UNCERTAINTY</small></div></div>
+                <p id="score-verdict"><b>LOW</b> The model is certain.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="properties-section">
+      <div class="shell properties-grid">
+        <div class="properties-copy"><span class="kicker kicker-light">Why it works</span><h2>One score.<br>Three guarantees.</h2><p>The normalized measure is bounded in [0, 1] and behaves exactly as a semantic uncertainty estimator should.</p></div>
+        <div class="property-stack">
+          <article><span>≈</span><div><h3>Semantic identity</h3><p>Uncertainty is zero when all sampled responses mean the same thing.</p></div><b>U = 0</b></article>
+          <article><span>≠</span><div><h3>Semantic disjointness</h3><p>Uncertainty is one when the response sets are entirely semantically different.</p></div><b>U = 1</b></article>
+          <article><span>↗</span><div><h3>Monotonicity</h3><p>More semantically unique responses can only increase uncertainty.</p></div><b>ΔU ≥ 0</b></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="results-section shell" id="results">
+      <div class="section-heading results-heading">
+        <div><span class="kicker">Results</span><h2>Stronger abstention,<br>across modalities.</h2></div>
+        <p>BiG-SURE is evaluated as an abstention score: can uncertainty separate incorrect answers from correct ones? Higher AUROC is better.</p>
+      </div>
+      <div class="result-hero">
+        <div class="big-result"><strong>6<span>/7</span></strong><p>dataset & language groups where SURE achieves the best average AUROC</p></div>
+        <div class="result-bars" aria-label="Average AUROC comparisons">
+          <div class="bar-group"><div class="bar-title"><b>Trivia-QA</b><span>text · factual</span></div><div class="bars"><div class="baseline" style="--w:72.2%"><span>Best prior</span><b>.722</b></div><div class="sure" style="--w:75.3%"><span>BiG-SURE</span><b>.753</b></div></div></div>
+          <div class="bar-group"><div class="bar-title"><b>SVAMP</b><span>text · math</span></div><div class="bars"><div class="baseline" style="--w:84.6%"><span>Best prior</span><b>.846</b></div><div class="sure" style="--w:87.7%"><span>BiG-SURE</span><b>.877</b></div></div></div>
+          <div class="bar-group"><div class="bar-title"><b>OK-VQA</b><span>vision + text</span></div><div class="bars"><div class="baseline" style="--w:73.5%"><span>Best prior</span><b>.735</b></div><div class="sure" style="--w:75.2%"><span>BiG-SURE</span><b>.752</b></div></div></div>
+        </div>
+      </div>
+      <div class="coverage-row">
+        <div><span>7</span><p>dataset / language groups</p></div><div><span>11</span><p>LLM & VLM configurations</p></div><div><span>3</span><p>text, multilingual & vision settings</p></div>
+      </div>
+      <p class="results-note">Refer to the paper for further details.</p>
+    </section>
+
+    <section class="evidence-section">
+      <div class="shell">
+        <div class="section-heading evidence-heading"><div><span class="kicker">Sensitivity studies</span><h2>Stable by design.</h2></div><p>The signal persists across practical sampling choices. Explore the two ablations directly from the paper.</p></div>
+        <div class="figure-grid">
+          <a class="figure-card" href="assets/temperature-sensitivity.png" target="_blank" rel="noreferrer">
+            <div class="figure-image"><img src="assets/temperature-sensitivity.png" alt="Temperature sensitivity grid from the BiG-SURE paper" loading="lazy"></div>
+            <div><span>01 / Temperature</span><h3>Cross-temperature choices</h3><p>Performance across low- and high-temperature pairings.</p><b aria-hidden="true">↗</b></div>
+          </a>
+          <a class="figure-card" href="assets/sample-sensitivity.png" target="_blank" rel="noreferrer">
+            <div class="figure-image"><img src="assets/sample-sensitivity.png" alt="Sample count sensitivity plot from the BiG-SURE paper" loading="lazy"></div>
+            <div><span>02 / Samples</span><h3>How many probes?</h3><p>Sensitivity to the number of low- and high-temperature samples.</p><b aria-hidden="true">↗</b></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="citation-section" id="citation">
+      <div class="shell citation-grid">
+        <div><span class="kicker kicker-light">BibTeX</span><h2>Cite the work.</h2><p>Author details and archival links can be inserted here when the paper is de-anonymized.</p></div>
+        <div class="code-card"><button id="copy-citation" type="button">Copy <span aria-hidden="true">⧉</span></button><pre><code id="citation-code">@inproceedings{bigsure2026,
+  title     = {BiG-SURE: Bipartite Graph Spectral Energy for
+               Uncertainty and Reliability Estimation of LLMs},
+  booktitle = {Proceedings of EMNLP},
+  year      = {2026}
+}</code></pre></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer shell"><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>BiG—SURE</span></a><p>Black-box uncertainty through semantic agreement.</p><a href="#top">Back to top ↑</a></footer>
+  <script src="app.js?v=20260826-1"></script>
+</body>
+</html>
