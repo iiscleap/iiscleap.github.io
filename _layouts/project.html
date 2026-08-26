@@ -3,46 +3,129 @@ layout: default
 ---
 
 <style>
-  /* Reusable project-page layout. It affects only pages using layout: project. */
-  .main-content-wrap,
-  .main-content {
-    max-width: none;
+  :root {
+    --project-rail-width: clamp(3.15rem, 4vw, 4.25rem);
   }
 
+  /* Project pages replace the documentation chrome with a compact icon rail. */
+  .side-bar,
+  .main-header,
+  .breadcrumb-nav {
+    display: none !important;
+  }
+
+  .main {
+    width: calc(100% - var(--project-rail-width)) !important;
+    max-width: none !important;
+    height: 100vh;
+    margin: 0 0 0 var(--project-rail-width) !important;
+    padding: 0 !important;
+    overflow: hidden;
+  }
+
+  .main-content-wrap,
   .main-content {
-    padding: 0;
+    width: 100% !important;
+    max-width: none !important;
+    height: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .project-rail {
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: 100;
+    width: var(--project-rail-width);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.75rem 0.45rem;
+    background: #f5f6fa;
+    border-right: 1px solid #e2e4ea;
+  }
+
+  .project-rail a {
+    position: relative;
+    width: 2.35rem;
+    height: 2.35rem;
+    display: grid;
+    place-items: center;
+    color: #4f566b;
+    border-radius: 0.65rem;
+    transition: color 160ms ease, background 160ms ease, transform 160ms ease;
+  }
+
+  .project-rail a:hover,
+  .project-rail a:focus-visible {
+    color: #3857c8;
+    background: #e6eaff;
+    transform: translateX(1px);
+    outline: none;
+  }
+
+  .project-rail a[aria-current="page"] {
+    color: #fff;
+    background: #3857c8;
+  }
+
+  .project-rail svg {
+    width: 1.15rem;
+    height: 1.15rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .project-rail a::after {
+    content: attr(data-label);
+    position: absolute;
+    left: calc(100% + 0.65rem);
+    top: 50%;
+    transform: translateY(-50%) translateX(-0.25rem);
+    padding: 0.32rem 0.5rem;
+    color: #fff;
+    background: #20242f;
+    border-radius: 0.35rem;
+    font-size: 0.7rem;
+    line-height: 1;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 140ms ease, transform 140ms ease;
+  }
+
+  .project-rail a:hover::after,
+  .project-rail a:focus-visible::after {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
   }
 
   .project-page-frame {
     display: block;
     width: 100%;
-    height: calc(100vh - 3.75rem);
-    min-height: 760px;
+    height: 100vh;
     border: 0;
   }
-
-  @media (min-width: 50rem) {
-    .side-bar {
-      width: 12rem;
-      min-width: 12rem;
-    }
-
-    .main {
-      max-width: none;
-      margin-left: 12rem;
-    }
-
-    .main-header {
-      left: 12rem;
-    }
-
-    .site-header,
-    .site-nav {
-      padding-left: 0.5rem;
-      padding-right: 0.5rem;
-    }
-  }
 </style>
+
+<nav class="project-rail" aria-label="LEAP sections">
+  <a href="{{ '/' | relative_url }}" data-label="Home" aria-label="Home">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v10h13V10M9.5 20v-6h5v6"/></svg>
+  </a>
+  <a href="{{ '/eehpc-cluster/' | relative_url }}" data-label="EEHPC Cluster" aria-label="EEHPC Cluster">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="6" rx="1.5"/><rect x="4" y="14" width="16" height="6" rx="1.5"/><path d="M8 7h.01M8 17h.01M12 7h5M12 17h5"/></svg>
+  </a>
+  <a href="{{ '/travel-grants/' | relative_url }}" data-label="Travel Grants" aria-label="Travel Grants">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 18-7-7 18-3-8-8-3Z"/><path d="m11 14 4-4"/></svg>
+  </a>
+  <a href="{{ '/projects/' | relative_url }}" data-label="Projects" aria-label="Projects" aria-current="page">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg>
+  </a>
+</nav>
 
 <iframe
   class="project-page-frame"
