@@ -35,7 +35,7 @@ img { max-width: 100%; display: block; }
 .brand-mark::before { top: 11px; transform: rotate(-31deg); }.brand-mark::after { top: 12px; transform: rotate(31deg); }
 .site-header nav { display: flex; gap: 34px; font-size: 14px; font-weight: 650; }
 .site-header nav a { position: relative; }.site-header nav a::after { content: ""; position: absolute; height: 1px; left: 0; right: 100%; bottom: -5px; background: var(--ink); transition: right .25s; }.site-header nav a:hover::after { right: 0; }
-.header-paper { font-size: 14px; border-bottom: 1px solid var(--ink); padding: 8px 0 5px; font-weight: 750; }
+.header-links { display: flex; align-items: center; gap: 14px; } .header-code { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; transition: background .2s, transform .2s; } .header-code:hover { background: rgba(23,34,29,.08); transform: translateY(-1px); } .header-code svg { width: 20px; height: 20px; } .header-paper { font-size: 14px; border-bottom: 1px solid var(--ink); padding: 8px 0 5px; font-weight: 750; }
 
 .hero { min-height: 700px; padding: 104px 0 92px; display: grid; grid-template-columns: 1.04fr .96fr; align-items: center; gap: 72px; }
 .eyebrow, .kicker { text-transform: uppercase; font-size: 11px; letter-spacing: .16em; font-weight: 800; }
